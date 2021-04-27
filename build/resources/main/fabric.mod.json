@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "colwater",
+  "version": "1.0.0",
+
+  "name": "ColWater",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/colwater/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.codeetoasty.colwater.ColoredWater"
+    ],
+    "client": [
+      {
+        "value": "com.codeetoasty.colwater.render.ColoredWaterClient"
+      }
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
