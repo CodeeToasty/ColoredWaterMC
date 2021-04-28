@@ -28,6 +28,7 @@
     ]
   },
   "mixins": [
+    "colwater.mixins.json"
   ],
 
   "depends": {
