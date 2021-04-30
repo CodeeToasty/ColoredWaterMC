@@ -23,7 +23,6 @@ public class ModParticles {
     public static DefaultParticleType RED_SPLASH;
     public static DefaultParticleType WHITE_SPLASH;
     public static DefaultParticleType YELLOW_SPLASH;
-
     public static DefaultParticleType BLACK_BUBBLE;
     public static DefaultParticleType BROWN_BUBBLE;
     public static DefaultParticleType CYAN_BUBBLE;
@@ -97,7 +96,6 @@ public class ModParticles {
         ParticleFactoryRegistry.getInstance().register(WHITE_BUBBLE, WhiteBubble.Factory::new);
         YELLOW_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "yellow_bubble"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(YELLOW_BUBBLE, YellowBubble.Factory::new);
-
 
     }
 }

@@ -6,6 +6,7 @@ import com.codeetoasty.colwater.registry.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
@@ -31,6 +32,7 @@ public abstract class BlackWater extends DyableWater {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
         return ModBlocks.BLACK.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
     }
+
 
     public static class Flowing extends BlackWater {
         @Override

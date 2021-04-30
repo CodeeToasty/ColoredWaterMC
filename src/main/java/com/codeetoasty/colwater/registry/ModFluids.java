@@ -77,6 +77,5 @@ public class ModFluids {
         FLOWING_LIME = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "flowing_lime"), new LimeWater.Flowing());
 
 
-
     }
 }
