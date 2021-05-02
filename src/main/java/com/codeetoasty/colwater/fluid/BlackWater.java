@@ -12,6 +12,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
 public abstract class BlackWater extends DyableWater {
+
     @Override
     public Fluid getStill() {
         return ModFluids.STILL_BLACK;
@@ -35,6 +36,7 @@ public abstract class BlackWater extends DyableWater {
 
 
     public static class Flowing extends BlackWater {
+
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
