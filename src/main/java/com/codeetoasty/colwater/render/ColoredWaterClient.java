@@ -29,7 +29,6 @@ public class ColoredWaterClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-
         setupFluidRendering(ModFluids.STILL_PINK, ModFluids.FLOWING_PINK, new Identifier("minecraft", "water"), 0xf38baa);
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_PINK, ModFluids.FLOWING_PINK);
 

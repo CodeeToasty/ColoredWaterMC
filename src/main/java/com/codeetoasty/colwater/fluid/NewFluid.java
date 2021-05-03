@@ -13,8 +13,6 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 public abstract class NewFluid extends FlowableFluid {
-
-
     /**
      * @return whether the given fluid an instance of this fluid
      */
