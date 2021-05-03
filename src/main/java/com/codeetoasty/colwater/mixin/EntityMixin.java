@@ -99,8 +99,8 @@ public class EntityMixin {
 
         protected BlockState getRightState(Entity thiz,BlockState state,double vel_x, double vel_z) {
 
-            String direction_z;
-            String direction_x;
+            String direction_z = new String();
+            String direction_x = new String();
             if (vel_z < 0) {
                 direction_z = "north";
             }
