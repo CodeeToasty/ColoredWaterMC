@@ -54,6 +54,34 @@ public class EntityMixin {
                         return ModParticles.WHITE_BUBBLE;
                     case "Block{colwater:yellow}":
                         return ModParticles.YELLOW_BUBBLE;
+                    case "Block{colwater:glow_black}":
+                        return ModParticles.BLACK_BUBBLE;
+                    case "Block{colwater:glow_brown}":
+                        return ModParticles.BROWN_BUBBLE;
+                    case "Block{colwater:glow_cyan}":
+                        return ModParticles.CYAN_BUBBLE;
+                    case "Block{colwater:glow_gray}":
+                        return ModParticles.GRAY_BUBBLE;
+                    case "Block{colwater:glow_green}":
+                        return ModParticles.GREEN_BUBBLE;
+                    case "Block{colwater:glow_light_blue}":
+                        return ModParticles.LIGHT_BLUE_BUBBLE;
+                    case "Block{colwater:glow_lime}":
+                        return ModParticles.LIME_BUBBLE;
+                    case "Block{colwater:glow_magenta}":
+                        return ModParticles.MAGENTA_BUBBLE;
+                    case "Block{colwater:glow_orange}":
+                        return ModParticles.ORANGE_BUBBLE;
+                    case "Block{colwater:glow_pink}":
+                        return ModParticles.PINK_BUBBLE;
+                    case "Block{colwater:glow_purple}":
+                        return ModParticles.PURPLE_BUBBLE;
+                    case "Block{colwater:glow_red}":
+                        return ModParticles.RED_BUBBLE;
+                    case "Block{colwater:glow_white}":
+                        return ModParticles.WHITE_BUBBLE;
+                    case "Block{colwater:glow_yellow}":
+                        return ModParticles.YELLOW_BUBBLE;
                     default:
                         return particle;
                 }
@@ -88,6 +116,34 @@ public class EntityMixin {
                     case "Block{colwater:white}":
                         return ModParticles.WHITE_SPLASH;
                     case "Block{colwater:yellow}":
+                        return ModParticles.YELLOW_SPLASH;
+                    case "Block{colwater:glow_black}":
+                        return ModParticles.BLACK_SPLASH;
+                    case "Block{colwater:glow_brown}":
+                        return ModParticles.BROWN_SPLASH;
+                    case "Block{colwater:glow_cyan}":
+                        return ModParticles.CYAN_SPLASH;
+                    case "Block{colwater:glow_gray}":
+                        return ModParticles.GRAY_SPLASH;
+                    case "Block{colwater:glow_green}":
+                        return ModParticles.GREEN_SPLASH;
+                    case "Block{colwater:glow_light_blue}":
+                        return ModParticles.LIGHT_BLUE_SPLASH;
+                    case "Block{colwater:glow_lime}":
+                        return ModParticles.LIME_SPLASH;
+                    case "Block{colwater:glow_magenta}":
+                        return ModParticles.MAGENTA_SPLASH;
+                    case "Block{colwater:glow_orange}":
+                        return ModParticles.ORANGE_SPLASH;
+                    case "Block{colwater:glow_pink}":
+                        return ModParticles.PINK_SPLASH;
+                    case "Block{colwater:glow_purple}":
+                        return ModParticles.PURPLE_SPLASH;
+                    case "Block{colwater:glow_red}":
+                        return ModParticles.RED_SPLASH;
+                    case "Block{colwater:glow_white}":
+                        return ModParticles.WHITE_SPLASH;
+                    case "Block{colwater:glow_yellow}":
                         return ModParticles.YELLOW_SPLASH;
                     default:
                         return particle;
