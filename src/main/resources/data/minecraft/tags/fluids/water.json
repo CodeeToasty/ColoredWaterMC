@@ -28,6 +28,8 @@
     "colwater:white",
     "colwater:flowing_white",
     "colwater:yellow",
-    "colwater:flowing_yellow"
+    "colwater:flowing_yellow",
+    "colwater:glow_lime",
+    "colwater:glow_flowing_lime"
   ]
 }

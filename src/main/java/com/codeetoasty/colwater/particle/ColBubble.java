@@ -9,8 +9,8 @@ import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 
 @Environment(EnvType.CLIENT)
-public class GrayBubble extends SpriteBillboardParticle {
-    private GrayBubble(ClientWorld world, double x, double y, double z, double d, double e, double f) {
+public class ColBubble extends SpriteBillboardParticle {
+    private ColBubble(ClientWorld world, double x, double y, double z, double d, double e, double f) {
         super(world, x, y, z);
         this.setBoundingBoxSpacing(0.02F, 0.02F);
         this.scale *= this.random.nextFloat() * 0.6F + 0.2F;
@@ -52,9 +52,9 @@ public class GrayBubble extends SpriteBillboardParticle {
         }
 
         public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i) {
-            com.codeetoasty.colwater.particle.GrayBubble GrayBubble = new com.codeetoasty.colwater.particle.GrayBubble(clientWorld, d, e, f, g, h, i);
-            GrayBubble.setSprite(this.spriteProvider);
-            return GrayBubble;
+            ColBubble ColBubble = new ColBubble(clientWorld, d, e, f, g, h, i);
+            ColBubble.setSprite(this.spriteProvider);
+            return ColBubble;
         }
     }
 }

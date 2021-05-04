@@ -1,8 +1,9 @@
-package com.codeetoasty.colwater.fluid;
+package com.codeetoasty.colwater.fluid.coloredfluid;
 
+import com.codeetoasty.colwater.fluid.DyableWater;
 import com.codeetoasty.colwater.registry.ModBlocks;
-import com.codeetoasty.colwater.registry.ModItems;
 import com.codeetoasty.colwater.registry.ModFluids;
+import com.codeetoasty.colwater.registry.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -10,29 +11,32 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public abstract class RedWater extends DyableWater {
+public abstract class BlackWater extends DyableWater {
+
     @Override
     public Fluid getStill() {
-        return ModFluids.STILL_RED;
+        return ModFluids.STILL_BLACK;
     }
 
     @Override
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_RED;
+        return ModFluids.FLOWING_BLACK;
     }
 
     @Override
     public Item getBucketItem() {
-        return ModItems.RED_BUCKET;
+        return ModItems.BLACK_BUCKET;
     }
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
-        return ModBlocks.RED.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
+        return ModBlocks.BLACK.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
     }
 
-    public static class Flowing extends RedWater {
+
+    public static class Flowing extends BlackWater {
+
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
@@ -50,7 +54,7 @@ public abstract class RedWater extends DyableWater {
         }
     }
 
-    public static class Still extends RedWater {
+    public static class Still extends BlackWater {
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

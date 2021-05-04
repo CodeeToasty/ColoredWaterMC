@@ -18,6 +18,7 @@ public class EntityMixin {
         if(thiz.world.isClient) {
             BlockState state = thiz.world.getBlockState(thiz.getBlockPos());
 
+
             double vel_x = thiz.getVelocity().getX();
             double vel_z = thiz.getVelocity().getZ();
 

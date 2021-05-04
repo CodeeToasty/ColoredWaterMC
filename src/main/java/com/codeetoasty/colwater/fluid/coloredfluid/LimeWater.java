@@ -1,5 +1,6 @@
-package com.codeetoasty.colwater.fluid;
+package com.codeetoasty.colwater.fluid.coloredfluid;
 
+import com.codeetoasty.colwater.fluid.DyableWater;
 import com.codeetoasty.colwater.registry.ModBlocks;
 import com.codeetoasty.colwater.registry.ModFluids;
 import com.codeetoasty.colwater.registry.ModItems;
@@ -10,29 +11,29 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public abstract class MagentaWater extends DyableWater {
+public abstract class LimeWater extends DyableWater {
     @Override
     public Fluid getStill() {
-        return ModFluids.STILL_MAGENTA;
+        return ModFluids.STILL_LIME;
     }
 
     @Override
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_MAGENTA;
+        return ModFluids.FLOWING_LIME;
     }
 
     @Override
     public Item getBucketItem() {
-        return ModItems.MAGENTA_BUCKET;
+        return ModItems.LIME_BUCKET;
     }
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
-        return ModBlocks.MAGENTA.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
+        return ModBlocks.LIME.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
     }
 
-    public static class Flowing extends MagentaWater {
+    public static class Flowing extends LimeWater {
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
@@ -50,7 +51,7 @@ public abstract class MagentaWater extends DyableWater {
         }
     }
 
-    public static class Still extends MagentaWater {
+    public static class Still extends LimeWater {
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

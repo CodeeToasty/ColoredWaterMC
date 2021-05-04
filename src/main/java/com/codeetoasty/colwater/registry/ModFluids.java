@@ -2,9 +2,8 @@ package com.codeetoasty.colwater.registry;
 
 
 import com.codeetoasty.colwater.fluid.*;
-import net.fabricmc.fabric.impl.registry.sync.FabricRegistryInit;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
+import com.codeetoasty.colwater.fluid.coloredfluid.*;
+import com.codeetoasty.colwater.fluid.glowingfluid.GlowLimeWater;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -78,8 +77,5 @@ public class ModFluids {
 
         STILL_LIME = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "lime"), new LimeWater.Still());
         FLOWING_LIME = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "flowing_lime"), new LimeWater.Flowing());
-
-
-
     }
 }

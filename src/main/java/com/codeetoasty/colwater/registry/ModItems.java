@@ -1,9 +1,6 @@
 package com.codeetoasty.colwater.registry;
 
 import com.codeetoasty.colwater.ColoredWater;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.fluid.WaterFluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -29,8 +26,6 @@ public class ModItems {
     public static Item LIGHT_BLUE_BUCKET = new BucketItem(ModFluids.STILL_LIGHT_BLUE, new Item.Settings().group(ItemGroup.DECORATIONS).recipeRemainder(Items.BUCKET).maxCount(1));
     public static Item LIME_BUCKET = new BucketItem(ModFluids.STILL_LIME, new Item.Settings().group(ItemGroup.DECORATIONS).recipeRemainder(Items.BUCKET).maxCount(1));
 
-
-
     public static void registerItems() {
         DYABLE_WATER_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "dyable_water_bucket"), DYABLE_WATER_BUCKET);
 
@@ -48,8 +43,6 @@ public class ModItems {
         GRAY_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "gray_bucket"), GRAY_BUCKET );
         LIGHT_BLUE_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "light_blue_bucket"), LIGHT_BLUE_BUCKET );
         LIME_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "lime_bucket"), LIME_BUCKET );
-
-
 
     }
 }

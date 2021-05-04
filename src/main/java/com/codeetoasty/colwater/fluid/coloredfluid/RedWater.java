@@ -1,8 +1,9 @@
-package com.codeetoasty.colwater.fluid;
+package com.codeetoasty.colwater.fluid.coloredfluid;
 
+import com.codeetoasty.colwater.fluid.DyableWater;
 import com.codeetoasty.colwater.registry.ModBlocks;
-import com.codeetoasty.colwater.registry.ModFluids;
 import com.codeetoasty.colwater.registry.ModItems;
+import com.codeetoasty.colwater.registry.ModFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -10,27 +11,29 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public abstract class OrangeWater extends DyableWater {
+public abstract class RedWater extends DyableWater {
     @Override
-    public Fluid getStill() { return ModFluids.STILL_ORANGE;
+    public Fluid getStill() {
+        return ModFluids.STILL_RED;
     }
 
     @Override
-    public Fluid getFlowing() { return ModFluids.FLOWING_ORANGE;
+    public Fluid getFlowing() {
+        return ModFluids.FLOWING_RED;
     }
 
     @Override
     public Item getBucketItem() {
-        return ModItems.ORANGE_BUCKET;
+        return ModItems.RED_BUCKET;
     }
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
-        return ModBlocks.ORANGE.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
+        return ModBlocks.RED.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
     }
 
-    public static class Flowing extends OrangeWater {
+    public static class Flowing extends RedWater {
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
@@ -48,7 +51,7 @@ public abstract class OrangeWater extends DyableWater {
         }
     }
 
-    public static class Still extends OrangeWater {
+    public static class Still extends RedWater {
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

@@ -11,8 +11,8 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
 
 @Environment(EnvType.CLIENT)
-public class CyanSplash extends RainSplashParticle {
-    protected CyanSplash(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
+public class ColSplash extends RainSplashParticle {
+    protected ColSplash(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
         super(world, x, y, z);
         this.gravityStrength = 0.04F;
         if (velocityY == 0.0D && (velocityX != 0.0D || velocityZ != 0.0D)) {
@@ -33,7 +33,7 @@ public class CyanSplash extends RainSplashParticle {
 
 
         public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i) {
-            CyanSplash testSplash = new CyanSplash(clientWorld, d, e, f, g, h, i);
+            ColSplash testSplash = new ColSplash(clientWorld, d, e, f, g, h, i);
             testSplash.setSprite(this.spriteProvider);
             return testSplash;
         }
