@@ -4,12 +4,19 @@ import com.codeetoasty.colwater.fluid.DyableWater;
 import com.codeetoasty.colwater.registry.ModBlocks;
 import com.codeetoasty.colwater.registry.ModFluids;
 import com.codeetoasty.colwater.registry.ModItems;
+import com.codeetoasty.colwater.registry.ModParticles;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+import java.util.Random;
 
 public abstract class GlowWhiteWater extends DyableWater {
     @Override
@@ -31,6 +38,19 @@ public abstract class GlowWhiteWater extends DyableWater {
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
         return ModBlocks.GLOW_WHITE.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
+    }
+
+    @Environment(EnvType.CLIENT)
+    public void randomDisplayTick(World world, BlockPos pos, FluidState state, Random random) {
+        BlockPos blockPos = pos.up();
+        if (world.getBlockState(blockPos).isAir() && !world.getBlockState(blockPos).isOpaqueFullCube(world, blockPos)) {
+            if (random.nextInt(25) == 0) {
+                double d = (double) pos.getX() + random.nextDouble();
+                double e = (double) pos.getY() + 1.0D;
+                double f = (double) pos.getZ() + random.nextDouble();
+                world.addParticle(ModParticles.WHITE_SUS, d, e, f, 0.0D, 0.0D, 0.0D);
+            }
+        }
     }
 
     public static class Flowing extends GlowWhiteWater {

@@ -75,7 +75,7 @@ public class ModFluids {
     public static FlowableFluid GLOW_FLOWING_LIME;
 
     public static void registerFluids(){
-        STILL_DYABLE_WATER = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "dyable_water.json"), new DyableWater.Still());
+        STILL_DYABLE_WATER = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "dyable_water"), new DyableWater.Still());
         FLOWING_DYABLE_WATER = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "flowing_dyable_water"), new DyableWater.Flowing());
 
         STILL_GREEN = Registry.register(Registry.FLUID, new Identifier(ColoredWater.MOD_ID, "green"), new GreenWater.Still());

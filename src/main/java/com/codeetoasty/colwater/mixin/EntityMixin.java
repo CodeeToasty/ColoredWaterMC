@@ -154,8 +154,11 @@ public class EntityMixin {
         }
 
 
+        // scans blocks ahead of entity's direction to
+        // try to spawn the correct colored particles.
         protected BlockState getRightState(Entity thiz,BlockState state,double vel_x, double vel_z) {
 
+        //get z and x velocity to know direction
             String direction_z = new String();
             String direction_x = new String();
             if (vel_z < 0) {
@@ -170,7 +173,15 @@ public class EntityMixin {
             if (vel_x > 0) {
                 direction_x = "east";
             }
+            /*
+            if x or z velocity are 0 the string is empty since
+            entity was moving perfectly straight -> avoid switch.
+            the switchs check for the direction the player is going.
+            Here's the last improvable code: the check is arbitrary in the order.
+            To improve this i should add extra controls and frankly is a lot
+            messy and the code works fine 99% of the time as it is.
 
+             */
                 if (!direction_x.isEmpty()){
                     switch (direction_x) {
                         case "east":
