@@ -47,6 +47,7 @@ public class ColSusp extends SpriteBillboardParticle {
         this.prevPosY = this.y;
         this.prevPosZ = this.z;
 
+        //particle works only at night (change?)
         if ((world.getTimeOfDay() >= 1000 && world.getTimeOfDay() < 13000) || this.age++ >= this.maxAge) {
             this.nextAlphaGoal = 0;
             if (this.colorAlpha < 0f) {
@@ -54,7 +55,6 @@ public class ColSusp extends SpriteBillboardParticle {
             }
         }
 
-        // fade and die
         if (this.colorAlpha > this.nextAlphaGoal - BLINK_STEP && this.colorAlpha < this.nextAlphaGoal + BLINK_STEP) {
             this.nextAlphaGoal = new Random().nextFloat();
         } else {
