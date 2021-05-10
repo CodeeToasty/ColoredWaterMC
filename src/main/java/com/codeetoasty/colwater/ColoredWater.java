@@ -15,5 +15,6 @@ public class ColoredWater implements ModInitializer {
         ModBlocks.registerBlocks();
         ModItems.registerItems();
         ModParticles.registerParticles();
+
     }
 }

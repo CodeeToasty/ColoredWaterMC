@@ -28,6 +28,10 @@ public class ColoredWaterClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        setupFluidRendering(ModFluids.STILL_DYABLE_WATER, ModFluids.FLOWING_DYABLE_WATER, new Identifier("minecraft", "water"), 0xffffff);
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getSolid(), ModFluids.STILL_DYABLE_WATER, ModFluids.FLOWING_DYABLE_WATER);
+
         //Colored Water
         {
             setupFluidRendering(ModFluids.STILL_PINK, ModFluids.FLOWING_PINK, new Identifier("minecraft", "water"), 0xf38baa);
@@ -115,6 +119,7 @@ public class ColoredWaterClient implements ClientModInitializer {
         setupFluidRendering(ModFluids.GLOW_STILL_LIME, ModFluids.GLOW_FLOWING_LIME, new Identifier("minecraft", "water"), 0x80c71f);
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.GLOW_STILL_LIME, ModFluids.GLOW_FLOWING_LIME);
 
+
     }
 
     public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color) {
@@ -161,9 +166,11 @@ public class ColoredWaterClient implements ClientModInitializer {
             public int getFluidColor(BlockRenderView view, BlockPos pos, FluidState state) {
                 return color;
             }
+
         };
 
         FluidRenderHandlerRegistry.INSTANCE.register(still, renderHandler);
         FluidRenderHandlerRegistry.INSTANCE.register(flowing, renderHandler);
     }
+
 }
