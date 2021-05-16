@@ -4,13 +4,14 @@
   "version": "${version}",
 
   "name": "ColWater",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adds colored water and more to minecraft :D",
   "authors": [
-    "Me!"
+    "CodeeToasty"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/colwater",
+    "sources": "https://github.com/CodeeToasty/ColoredWaterMC",
+    "issues": "https://github.com/CodeeToasty/ColoredWaterMC/issues"
   },
 
   "license": "GPL-3.0 License",
@@ -22,15 +23,13 @@
       "com.codeetoasty.colwater.ColoredWater"
     ],
     "client": [
-      {
-        "value": "com.codeetoasty.colwater.render.ColoredWaterClient"
-      }
-    ]
+      { "value": "com.codeetoasty.colwater.render.ColoredWaterClient" }
+    ],
+    "modmenu": [ "com.codeetoasty.colwater.menu.ModMenuApiImpl" ]
   },
   "mixins": [
     "colwater.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
@@ -38,5 +37,9 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+    }
   }
 }
