@@ -3,7 +3,6 @@ package com.codeetoasty.colwater.registry;
 import com.codeetoasty.colwater.ColoredWater;
 import com.codeetoasty.colwater.fluid.glowingfluid.GlowingFluidBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -42,13 +41,7 @@ public class ModBlocks {
     public static Block GLOW_LIGHT_BLUE;
     public static Block GLOW_LIME;
 
-    /*
-    public static boolean checkMods(){
-        return FabricLoader.getInstance().isModLoaded("hypcore");
-    }
-    */
 
-    public static boolean colorlight=true;
 
     public static void registerBlocks(){
         DYABLE_WATER = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "dyable_water"), new FluidBlock(ModFluids.STILL_DYABLE_WATER, FabricBlockSettings.copy(Blocks.WATER)){});
@@ -67,7 +60,7 @@ public class ModBlocks {
         LIGHT_BLUE = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "light_blue"), new FluidBlock(ModFluids.STILL_LIGHT_BLUE, FabricBlockSettings.copy(Blocks.WATER)){});
         LIME = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "lime"), new FluidBlock(ModFluids.STILL_LIME, FabricBlockSettings.copy(Blocks.WATER)){});
 
-        if(colorlight) {
+        if(ColoredWater.colorlight) {
             GLOW_GREEN = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "glow_green"), new GlowingFluidBlock(ModFluids.GLOW_STILL_GREEN, FabricBlockSettings.copy(Blocks.WATER),0.368f, 0.486f, 0.086f));
             GLOW_PINK = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "glow_pink"), new GlowingFluidBlock(ModFluids.GLOW_STILL_PINK, FabricBlockSettings.copy(Blocks.WATER),0.952f, 0.545f, 0.666f));
             GLOW_YELLOW = Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, "glow_yellow"), new GlowingFluidBlock(ModFluids.GLOW_STILL_YELLOW, FabricBlockSettings.copy(Blocks.WATER),0.996f, 0.847f, 0.239f));
