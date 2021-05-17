@@ -1,6 +1,8 @@
 package com.codeetoasty.colwater.mixin;
 
 import com.codeetoasty.colwater.ColoredWater;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameOverlayRenderer;

@@ -1,10 +1,7 @@
 package com.codeetoasty.colwater.menu;
 
 import com.codeetoasty.colwater.ColoredWater;
-import com.codeetoasty.colwater.registry.ModBlocks;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -49,7 +46,7 @@ public class ColWaterConfigScreen extends Screen {
         try (FileWriter writer = new FileWriter(configFile,false)) {
             writer.write(String.valueOf(ColoredWater.colorlight));
         } catch (IOException e) {
-            
+
         }
         client.openScreen(parent);
     }

@@ -4,8 +4,11 @@ import com.codeetoasty.colwater.registry.ModBlocks;
 import com.codeetoasty.colwater.registry.ModFluids;
 import com.codeetoasty.colwater.registry.ModItems;
 import com.codeetoasty.colwater.registry.ModParticles;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.launch.common.FabricLauncherBase;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -21,15 +24,24 @@ public class ColoredWater implements ModInitializer {
      */
 
     public static boolean colorlight;
-
+    EnvType envType = FabricLauncherBase.getLauncher().getEnvironmentType();
     @Override
     public void onInitialize() {
-        getConfig();
-        ModFluids.registerFluids();
-        ModBlocks.registerBlocks();
-        ModItems.registerItems();
-        ModParticles.registerParticles();
+        if(envType==EnvType.CLIENT) {
+            getConfig();
+            ModFluids.registerFluids();
+            ModBlocks.registerBlocks();
+            ModItems.registerItems();
+            ModParticles.registerParticles();
+        }
+        else{
+            getConfig();
+            ModFluids.registerFluids();
+            ModBlocks.registerBlocks();
+            ModItems.registerItems();
+        }
     }
+
 
     public void getConfig(){
         Path configPath = FabricLoader.getInstance().getConfigDir();

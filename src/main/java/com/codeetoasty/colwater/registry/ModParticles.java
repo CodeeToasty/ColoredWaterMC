@@ -4,6 +4,8 @@ import com.codeetoasty.colwater.ColoredWater;
 import com.codeetoasty.colwater.particle.ColBubble;
 import com.codeetoasty.colwater.particle.ColSplash;
 import com.codeetoasty.colwater.particle.ColSusp;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;

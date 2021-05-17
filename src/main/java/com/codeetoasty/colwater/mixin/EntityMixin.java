@@ -1,6 +1,8 @@
 package com.codeetoasty.colwater.mixin;
 
 import com.codeetoasty.colwater.registry.ModParticles;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleEffect;
@@ -82,9 +84,8 @@ public class EntityMixin {
                         return ModParticles.WHITE_BUBBLE;
                     case "Block{colwater:glow_yellow}":
                         return ModParticles.YELLOW_BUBBLE;
-                    default:
-                        return particle;
                 }
+                return particle;
             }
 
             if (particle.equals(ParticleTypes.SPLASH)) {
@@ -145,10 +146,9 @@ public class EntityMixin {
                         return ModParticles.WHITE_SPLASH;
                     case "Block{colwater:glow_yellow}":
                         return ModParticles.YELLOW_SPLASH;
-                    default:
-                        return particle;
                 }
-            }
+                return particle;
+                }
             }
             return particle;
         }
