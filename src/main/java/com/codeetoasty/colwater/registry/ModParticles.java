@@ -1,0 +1,150 @@
+package com.codeetoasty.colwater.registry;
+
+import com.codeetoasty.colwater.ColoredWater;
+import com.codeetoasty.colwater.particle.ColBubble;
+import com.codeetoasty.colwater.particle.ColSplash;
+import com.codeetoasty.colwater.particle.ColSusp;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+
+public class ModParticles {
+    public static DefaultParticleType BLACK_SPLASH;
+    public static DefaultParticleType BROWN_SPLASH;
+    public static DefaultParticleType CYAN_SPLASH;
+    public static DefaultParticleType GRAY_SPLASH;
+    public static DefaultParticleType GREEN_SPLASH;
+    public static DefaultParticleType LIGHT_BLUE_SPLASH;
+    public static DefaultParticleType LIME_SPLASH;
+    public static DefaultParticleType MAGENTA_SPLASH;
+    public static DefaultParticleType ORANGE_SPLASH;
+    public static DefaultParticleType PINK_SPLASH;
+    public static DefaultParticleType PURPLE_SPLASH;
+    public static DefaultParticleType RED_SPLASH;
+    public static DefaultParticleType WHITE_SPLASH;
+    public static DefaultParticleType YELLOW_SPLASH;
+
+    public static DefaultParticleType BLACK_BUBBLE;
+    public static DefaultParticleType BROWN_BUBBLE;
+    public static DefaultParticleType CYAN_BUBBLE;
+    public static DefaultParticleType GRAY_BUBBLE;
+    public static DefaultParticleType GREEN_BUBBLE;
+    public static DefaultParticleType LIGHT_BLUE_BUBBLE;
+    public static DefaultParticleType LIME_BUBBLE;
+    public static DefaultParticleType MAGENTA_BUBBLE;
+    public static DefaultParticleType ORANGE_BUBBLE;
+    public static DefaultParticleType PINK_BUBBLE;
+    public static DefaultParticleType PURPLE_BUBBLE;
+    public static DefaultParticleType RED_BUBBLE;
+    public static DefaultParticleType WHITE_BUBBLE;
+    public static DefaultParticleType YELLOW_BUBBLE;
+
+    public static DefaultParticleType LIME_SUS;
+    public static DefaultParticleType RED_SUS;
+    public static DefaultParticleType BLACK_SUS;
+    public static DefaultParticleType BROWN_SUS;
+    public static DefaultParticleType CYAN_SUS;
+    public static DefaultParticleType GRAY_SUS;
+    public static DefaultParticleType GREEN_SUS;
+    public static DefaultParticleType LIGHT_BLUE_SUS;
+    public static DefaultParticleType MAGENTA_SUS;
+    public static DefaultParticleType ORANGE_SUS;
+    public static DefaultParticleType PINK_SUS;
+    public static DefaultParticleType PURPLE_SUS;
+    public static DefaultParticleType WHITE_SUS;
+    public static DefaultParticleType YELLOW_SUS;
+
+    public static void registerParticles() {
+        BLACK_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "black_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(BLACK_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.113f, 0.113f, 0.129f));
+        BROWN_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "brown_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(BROWN_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.513f, 0.329f, 0.196f));
+        CYAN_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "cyan_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(CYAN_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.086f, 0.611f, 0.611f));
+        GRAY_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "gray_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(GRAY_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.278f, 0.309f, 0.321f));
+        GREEN_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "green_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(GREEN_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.368f, 0.486f, 0.086f));
+        LIGHT_BLUE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "light_blue_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(LIGHT_BLUE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.227f, 0.701f, 0.854f));
+        LIME_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "lime_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(LIME_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.501f, 0.780f, 0.121f));
+        MAGENTA_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "magenta_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(MAGENTA_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.780f, 0.305f, 0.741f));
+        ORANGE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "orange_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(ORANGE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.976f, 0.501f, 0.113f));
+        PINK_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "pink_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(PINK_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.952f, 0.545f, 0.666f));
+        PURPLE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "purple_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(PURPLE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.537f, 0.196f, 0.721f));
+        RED_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "red_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(RED_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.690f, 0.180f, 0.149f));
+        WHITE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "white_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(WHITE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.976f, 1f, 0.996f));
+        YELLOW_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "yellow_splash"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(YELLOW_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
+        {
+            BLACK_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "black_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(BLACK_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.113f, 0.113f, 0.129f));
+            BROWN_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "brown_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(BROWN_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.513f, 0.329f, 0.196f));
+            CYAN_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "cyan_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(CYAN_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.086f, 0.611f, 0.611f));
+            GRAY_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "gray_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(GRAY_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.278f, 0.309f, 0.321f));
+            GREEN_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "green_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(GREEN_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.368f, 0.486f, 0.086f));
+            LIGHT_BLUE_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "light_blue_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(LIGHT_BLUE_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.227f, 0.701f, 0.854f));
+            LIME_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "lime_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(LIME_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.501f, 0.780f, 0.121f));
+            MAGENTA_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "magenta_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(MAGENTA_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.780f, 0.305f, 0.741f));
+            ORANGE_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "orange_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(ORANGE_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.976f, 0.501f, 0.113f));
+            PINK_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "pink_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(PINK_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.952f, 0.545f, 0.666f));
+            PURPLE_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "purple_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(PURPLE_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.537f, 0.196f, 0.721f));
+            RED_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "red_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(RED_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.690f, 0.180f, 0.149f));
+            WHITE_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "white_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(WHITE_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.976f, 1f, 0.996f));
+            YELLOW_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "yellow_bubble"), FabricParticleTypes.simple(true));
+            ParticleFactoryRegistry.getInstance().register(YELLOW_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
+        }
+
+        LIME_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"lime_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(LIME_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.501f, 0.780f, 0.121f));
+        RED_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"red_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(RED_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.690f, 0.180f, 0.149f));
+        BLACK_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"black_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(BLACK_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.113f, 0.113f, 0.129f));
+        BROWN_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"brown_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(BROWN_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.513f, 0.329f, 0.196f));
+        CYAN_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"cyan_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(CYAN_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.086f, 0.611f, 0.611f));
+        GRAY_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"gray_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(GRAY_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.278f, 0.309f, 0.321f));
+        GREEN_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"green_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(GREEN_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.368f, 0.486f, 0.086f));
+        LIGHT_BLUE_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"light_blue_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(LIGHT_BLUE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.227f, 0.701f, 0.854f));
+        MAGENTA_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"magenta_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(MAGENTA_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.780f, 0.305f, 0.741f));
+        ORANGE_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"orange_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(ORANGE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.976f, 0.501f, 0.113f));
+        PINK_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"pink_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(PINK_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.952f, 0.545f, 0.666f));
+        PURPLE_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"purple_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(PURPLE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.537f, 0.196f, 0.721f));
+        WHITE_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"white_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(WHITE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.976f, 1f, 0.996f));
+        YELLOW_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"yellow_suspart"), FabricParticleTypes.simple(true));
+        ParticleFactoryRegistry.getInstance().register(YELLOW_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
+
+
+    }
+}
