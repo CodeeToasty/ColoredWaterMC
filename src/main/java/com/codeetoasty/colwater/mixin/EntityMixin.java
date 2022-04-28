@@ -16,149 +16,60 @@ public class EntityMixin {
     protected ParticleEffect changeSplashColour(ParticleEffect particle) {
         Entity thiz = (Entity) (Object) this;
 
-        if(thiz.world.isClient) {
-            BlockState state = thiz.world.getBlockState(thiz.getBlockPos());
+        BlockState state = getRightState(thiz,thiz.getBlockStateAtPos());
 
-            double vel_x = thiz.getVelocity().getX();
-            double vel_z = thiz.getVelocity().getZ();
+        if (particle.equals(ParticleTypes.BUBBLE)) {
+            return switch (state.getBlock().toString()) {
+                case "Block{colwater:black}", "Block{colwater:glow_black}" -> ModParticles.BLACK_BUBBLE;
+                case "Block{colwater:brown}", "Block{colwater:glow_brown}" -> ModParticles.BROWN_BUBBLE;
+                case "Block{colwater:cyan}", "Block{colwater:glow_cyan}" -> ModParticles.CYAN_BUBBLE;
+                case "Block{colwater:gray}", "Block{colwater:glow_gray}" -> ModParticles.GRAY_BUBBLE;
+                case "Block{colwater:green}", "Block{colwater:glow_green}" -> ModParticles.GREEN_BUBBLE;
+                case "Block{colwater:light_blue}", "Block{colwater:glow_light_blue}" -> ModParticles.LIGHT_BLUE_BUBBLE;
+                case "Block{colwater:lime}", "Block{colwater:glow_lime}" -> ModParticles.LIME_BUBBLE;
+                case "Block{colwater:magenta}", "Block{colwater:glow_magenta}" -> ModParticles.MAGENTA_BUBBLE;
+                case "Block{colwater:orange}", "Block{colwater:glow_orange}" -> ModParticles.ORANGE_BUBBLE;
+                case "Block{colwater:pink}", "Block{colwater:glow_pink}" -> ModParticles.PINK_BUBBLE;
+                case "Block{colwater:purple}", "Block{colwater:glow_purple}" -> ModParticles.PURPLE_BUBBLE;
+                case "Block{colwater:red}", "Block{colwater:glow_red}" -> ModParticles.RED_BUBBLE;
+                case "Block{colwater:white}", "Block{colwater:glow_white}" -> ModParticles.WHITE_BUBBLE;
+                case "Block{colwater:yellow}", "Block{colwater:glow_yellow}" -> ModParticles.YELLOW_BUBBLE;
+                default -> particle;
+            };
+        }
 
-            state = getRightState(thiz,state,vel_x,vel_z);
-
-            if (particle.equals(ParticleTypes.BUBBLE)) {
-                switch (state.getBlock().toString()) {
-                    case "Block{colwater:black}":
-                        return ModParticles.BLACK_BUBBLE;
-                    case "Block{colwater:brown}":
-                        return ModParticles.BROWN_BUBBLE;
-                    case "Block{colwater:cyan}":
-                        return ModParticles.CYAN_BUBBLE;
-                    case "Block{colwater:gray}":
-                        return ModParticles.GRAY_BUBBLE;
-                    case "Block{colwater:green}":
-                        return ModParticles.GREEN_BUBBLE;
-                    case "Block{colwater:light_blue}":
-                        return ModParticles.LIGHT_BLUE_BUBBLE;
-                    case "Block{colwater:lime}":
-                        return ModParticles.LIME_BUBBLE;
-                    case "Block{colwater:magenta}":
-                        return ModParticles.MAGENTA_BUBBLE;
-                    case "Block{colwater:orange}":
-                        return ModParticles.ORANGE_BUBBLE;
-                    case "Block{colwater:pink}":
-                        return ModParticles.PINK_BUBBLE;
-                    case "Block{colwater:purple}":
-                        return ModParticles.PURPLE_BUBBLE;
-                    case "Block{colwater:red}":
-                        return ModParticles.RED_BUBBLE;
-                    case "Block{colwater:white}":
-                        return ModParticles.WHITE_BUBBLE;
-                    case "Block{colwater:yellow}":
-                        return ModParticles.YELLOW_BUBBLE;
-                    case "Block{colwater:glow_black}":
-                        return ModParticles.BLACK_BUBBLE;
-                    case "Block{colwater:glow_brown}":
-                        return ModParticles.BROWN_BUBBLE;
-                    case "Block{colwater:glow_cyan}":
-                        return ModParticles.CYAN_BUBBLE;
-                    case "Block{colwater:glow_gray}":
-                        return ModParticles.GRAY_BUBBLE;
-                    case "Block{colwater:glow_green}":
-                        return ModParticles.GREEN_BUBBLE;
-                    case "Block{colwater:glow_light_blue}":
-                        return ModParticles.LIGHT_BLUE_BUBBLE;
-                    case "Block{colwater:glow_lime}":
-                        return ModParticles.LIME_BUBBLE;
-                    case "Block{colwater:glow_magenta}":
-                        return ModParticles.MAGENTA_BUBBLE;
-                    case "Block{colwater:glow_orange}":
-                        return ModParticles.ORANGE_BUBBLE;
-                    case "Block{colwater:glow_pink}":
-                        return ModParticles.PINK_BUBBLE;
-                    case "Block{colwater:glow_purple}":
-                        return ModParticles.PURPLE_BUBBLE;
-                    case "Block{colwater:glow_red}":
-                        return ModParticles.RED_BUBBLE;
-                    case "Block{colwater:glow_white}":
-                        return ModParticles.WHITE_BUBBLE;
-                    case "Block{colwater:glow_yellow}":
-                        return ModParticles.YELLOW_BUBBLE;
-                }
-                return particle;
-            }
-
-            if (particle.equals(ParticleTypes.SPLASH)) {
-                switch (state.getBlock().toString()) {
-                    case "Block{colwater:black}":
-                        return ModParticles.BLACK_SPLASH;
-                    case "Block{colwater:brown}":
-                        return ModParticles.BROWN_SPLASH;
-                    case "Block{colwater:cyan}":
-                        return ModParticles.CYAN_SPLASH;
-                    case "Block{colwater:gray}":
-                        return ModParticles.GRAY_SPLASH;
-                    case "Block{colwater:green}":
-                        return ModParticles.GREEN_SPLASH;
-                    case "Block{colwater:light_blue}":
-                        return ModParticles.LIGHT_BLUE_SPLASH;
-                    case "Block{colwater:lime}":
-                        return ModParticles.LIME_SPLASH;
-                    case "Block{colwater:magenta}":
-                        return ModParticles.MAGENTA_SPLASH;
-                    case "Block{colwater:orange}":
-                        return ModParticles.ORANGE_SPLASH;
-                    case "Block{colwater:pink}":
-                        return ModParticles.PINK_SPLASH;
-                    case "Block{colwater:purple}":
-                        return ModParticles.PURPLE_SPLASH;
-                    case "Block{colwater:red}":
-                        return ModParticles.RED_SPLASH;
-                    case "Block{colwater:white}":
-                        return ModParticles.WHITE_SPLASH;
-                    case "Block{colwater:yellow}":
-                        return ModParticles.YELLOW_SPLASH;
-                    case "Block{colwater:glow_black}":
-                        return ModParticles.BLACK_SPLASH;
-                    case "Block{colwater:glow_brown}":
-                        return ModParticles.BROWN_SPLASH;
-                    case "Block{colwater:glow_cyan}":
-                        return ModParticles.CYAN_SPLASH;
-                    case "Block{colwater:glow_gray}":
-                        return ModParticles.GRAY_SPLASH;
-                    case "Block{colwater:glow_green}":
-                        return ModParticles.GREEN_SPLASH;
-                    case "Block{colwater:glow_light_blue}":
-                        return ModParticles.LIGHT_BLUE_SPLASH;
-                    case "Block{colwater:glow_lime}":
-                        return ModParticles.LIME_SPLASH;
-                    case "Block{colwater:glow_magenta}":
-                        return ModParticles.MAGENTA_SPLASH;
-                    case "Block{colwater:glow_orange}":
-                        return ModParticles.ORANGE_SPLASH;
-                    case "Block{colwater:glow_pink}":
-                        return ModParticles.PINK_SPLASH;
-                    case "Block{colwater:glow_purple}":
-                        return ModParticles.PURPLE_SPLASH;
-                    case "Block{colwater:glow_red}":
-                        return ModParticles.RED_SPLASH;
-                    case "Block{colwater:glow_white}":
-                        return ModParticles.WHITE_SPLASH;
-                    case "Block{colwater:glow_yellow}":
-                        return ModParticles.YELLOW_SPLASH;
-                }
-                return particle;
-                }
-            }
-            return particle;
+        if (particle.equals(ParticleTypes.SPLASH)) {
+            return switch (state.getBlock().toString()) {
+                case "Block{colwater:black}", "Block{colwater:glow_black}" -> ModParticles.BLACK_SPLASH;
+                case "Block{colwater:brown}", "Block{colwater:glow_brown}" -> ModParticles.BROWN_SPLASH;
+                case "Block{colwater:cyan}", "Block{colwater:glow_cyan}" -> ModParticles.CYAN_SPLASH;
+                case "Block{colwater:gray}", "Block{colwater:glow_gray}" -> ModParticles.GRAY_SPLASH;
+                case "Block{colwater:green}", "Block{colwater:glow_green}" -> ModParticles.GREEN_SPLASH;
+                case "Block{colwater:light_blue}", "Block{colwater:glow_light_blue}" -> ModParticles.LIGHT_BLUE_SPLASH;
+                case "Block{colwater:lime}", "Block{colwater:glow_lime}" -> ModParticles.LIME_SPLASH;
+                case "Block{colwater:magenta}", "Block{colwater:glow_magenta}" -> ModParticles.MAGENTA_SPLASH;
+                case "Block{colwater:orange}", "Block{colwater:glow_orange}" -> ModParticles.ORANGE_SPLASH;
+                case "Block{colwater:pink}", "Block{colwater:glow_pink}" -> ModParticles.PINK_SPLASH;
+                case "Block{colwater:purple}", "Block{colwater:glow_purple}" -> ModParticles.PURPLE_SPLASH;
+                case "Block{colwater:red}", "Block{colwater:glow_red}" -> ModParticles.RED_SPLASH;
+                case "Block{colwater:white}", "Block{colwater:glow_white}" -> ModParticles.WHITE_SPLASH;
+                case "Block{colwater:yellow}", "Block{colwater:glow_yellow}" -> ModParticles.YELLOW_SPLASH;
+                default -> particle;
+            };
+        }
+        return particle;
         }
 
 
         // scans blocks ahead of entity's direction to
         // try to spawn the correct colored particles.
-        protected BlockState getRightState(Entity thiz,BlockState state,double vel_x, double vel_z) {
+        protected BlockState getRightState(Entity thiz,BlockState state) {
 
+            double vel_x = thiz.getVelocity().getX();
+            double vel_z = thiz.getVelocity().getZ();
         //get z and x velocity to know direction
-            String direction_z = new String();
-            String direction_x = new String();
+            String direction_z = "";
+            String direction_x = "";
             if (vel_z < 0) {
                 direction_z = "north";
             }

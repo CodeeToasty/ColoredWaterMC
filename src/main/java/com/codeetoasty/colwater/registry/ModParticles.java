@@ -7,56 +7,57 @@ import com.codeetoasty.colwater.particle.ColSusp;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModParticles {
-    public static DefaultParticleType BLACK_SPLASH;
-    public static DefaultParticleType BROWN_SPLASH;
-    public static DefaultParticleType CYAN_SPLASH;
-    public static DefaultParticleType GRAY_SPLASH;
-    public static DefaultParticleType GREEN_SPLASH;
-    public static DefaultParticleType LIGHT_BLUE_SPLASH;
-    public static DefaultParticleType LIME_SPLASH;
-    public static DefaultParticleType MAGENTA_SPLASH;
-    public static DefaultParticleType ORANGE_SPLASH;
-    public static DefaultParticleType PINK_SPLASH;
-    public static DefaultParticleType PURPLE_SPLASH;
-    public static DefaultParticleType RED_SPLASH;
-    public static DefaultParticleType WHITE_SPLASH;
-    public static DefaultParticleType YELLOW_SPLASH;
+    public static DefaultParticleType BLACK_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType BROWN_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType CYAN_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType GRAY_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType GREEN_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType LIGHT_BLUE_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType LIME_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType MAGENTA_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType ORANGE_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType PINK_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType PURPLE_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType RED_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType WHITE_SPLASH=FabricParticleTypes.simple();
+    public static DefaultParticleType YELLOW_SPLASH=FabricParticleTypes.simple();
 
-    public static DefaultParticleType BLACK_BUBBLE;
-    public static DefaultParticleType BROWN_BUBBLE;
-    public static DefaultParticleType CYAN_BUBBLE;
-    public static DefaultParticleType GRAY_BUBBLE;
-    public static DefaultParticleType GREEN_BUBBLE;
-    public static DefaultParticleType LIGHT_BLUE_BUBBLE;
-    public static DefaultParticleType LIME_BUBBLE;
-    public static DefaultParticleType MAGENTA_BUBBLE;
-    public static DefaultParticleType ORANGE_BUBBLE;
-    public static DefaultParticleType PINK_BUBBLE;
-    public static DefaultParticleType PURPLE_BUBBLE;
-    public static DefaultParticleType RED_BUBBLE;
-    public static DefaultParticleType WHITE_BUBBLE;
-    public static DefaultParticleType YELLOW_BUBBLE;
+    public static DefaultParticleType BLACK_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType BROWN_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType CYAN_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType GRAY_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType GREEN_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType LIGHT_BLUE_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType LIME_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType MAGENTA_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType ORANGE_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType PINK_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType PURPLE_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType RED_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType WHITE_BUBBLE=FabricParticleTypes.simple();
+    public static DefaultParticleType YELLOW_BUBBLE=FabricParticleTypes.simple();
 
-    public static DefaultParticleType LIME_SUS;
-    public static DefaultParticleType RED_SUS;
-    public static DefaultParticleType BLACK_SUS;
-    public static DefaultParticleType BROWN_SUS;
-    public static DefaultParticleType CYAN_SUS;
-    public static DefaultParticleType GRAY_SUS;
-    public static DefaultParticleType GREEN_SUS;
-    public static DefaultParticleType LIGHT_BLUE_SUS;
-    public static DefaultParticleType MAGENTA_SUS;
-    public static DefaultParticleType ORANGE_SUS;
-    public static DefaultParticleType PINK_SUS;
-    public static DefaultParticleType PURPLE_SUS;
-    public static DefaultParticleType WHITE_SUS;
-    public static DefaultParticleType YELLOW_SUS;
+    public static DefaultParticleType LIME_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType RED_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType BLACK_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType BROWN_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType CYAN_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType GRAY_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType GREEN_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType LIGHT_BLUE_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType MAGENTA_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType ORANGE_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType PINK_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType PURPLE_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType WHITE_SUS=FabricParticleTypes.simple();
+    public static DefaultParticleType YELLOW_SUS=FabricParticleTypes.simple();
 
     public static void registerParticles() {
         BLACK_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "black_splash"), FabricParticleTypes.simple(true));
@@ -81,8 +82,6 @@ public class ModParticles {
         ParticleFactoryRegistry.getInstance().register(PINK_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.952f, 0.545f, 0.666f));
         PURPLE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "purple_splash"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(PURPLE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.537f, 0.196f, 0.721f));
-        RED_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "red_splash"), FabricParticleTypes.simple(true));
-        ParticleFactoryRegistry.getInstance().register(RED_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.690f, 0.180f, 0.149f));
         WHITE_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "white_splash"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(WHITE_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.976f, 1f, 0.996f));
         YELLOW_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "yellow_splash"), FabricParticleTypes.simple(true));
@@ -117,7 +116,6 @@ public class ModParticles {
         YELLOW_BUBBLE = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "yellow_bubble"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(YELLOW_BUBBLE, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
 
-
         LIME_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"lime_suspart"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(LIME_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.501f, 0.780f, 0.121f));
         RED_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"red_suspart"), FabricParticleTypes.simple(true));
@@ -146,7 +144,5 @@ public class ModParticles {
         ParticleFactoryRegistry.getInstance().register(WHITE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.976f, 1f, 0.996f));
         YELLOW_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"yellow_suspart"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(YELLOW_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
-
-
     }
 }

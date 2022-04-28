@@ -12,21 +12,21 @@ import net.minecraft.particle.DefaultParticleType;
 
 @Environment(EnvType.CLIENT)
 public class ColSplash extends RainSplashParticle {
-
-    protected float colorRed;
-    protected float colorGreen;
-    protected float colorBlue;
     protected ColSplash(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ,float red, float green, float blue) {
         super(world, x, y, z);
         this.gravityStrength = 0.04F;
-        this.colorRed = red;
-        this.colorGreen = green;
-        this.colorBlue = blue;
+        super.red = red;
+        super.green = green;
+        super.blue = blue;
         if (velocityY == 0.0D && (velocityX != 0.0D || velocityZ != 0.0D)) {
             this.velocityX = velocityX;
             this.velocityY = 0.1D;
             this.velocityZ = velocityZ;
         }
+    }
+
+    //
+    public void tick() {
 
     }
 

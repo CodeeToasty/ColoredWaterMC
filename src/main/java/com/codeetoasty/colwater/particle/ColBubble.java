@@ -10,14 +10,11 @@ import net.minecraft.util.math.BlockPos;
 
 @Environment(EnvType.CLIENT)
 public class ColBubble extends SpriteBillboardParticle {
-    protected float colorRed;
-    protected float colorGreen;
-    protected float colorBlue;
     private ColBubble(ClientWorld world, double x, double y, double z, double d, double e, double f, float red, float green, float blue) {
         super(world, x, y, z);
-        this.colorRed = red;
-        this.colorGreen = green;
-        this.colorBlue = blue;
+        super.red = red;
+        super.green = green;
+        super.blue = blue;
         this.setBoundingBoxSpacing(0.02F, 0.02F);
         this.scale *= this.random.nextFloat() * 0.6F + 0.2F;
         this.velocityX = d * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D;
@@ -26,6 +23,7 @@ public class ColBubble extends SpriteBillboardParticle {
         this.maxAge = (int)(8.0D / (Math.random() * 0.8D + 0.2D));
     }
 
+    @Override
     public void tick() {
         this.prevPosX = this.x;
         this.prevPosY = this.y;

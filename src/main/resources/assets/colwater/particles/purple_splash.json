@@ -1,8 +1,8 @@
 {
   "textures": [
-    "colwater:purple_splash_0",
-    "colwater:purple_splash_1",
-    "colwater:purple_splash_2",
-    "colwater:purple_splash_3"
+    "colwater:splash_0",
+    "colwater:splash_1",
+    "colwater:splash_2",
+    "colwater:splash_3"
   ]
 }

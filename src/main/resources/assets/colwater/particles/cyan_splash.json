@@ -1,8 +1,8 @@
 {
   "textures": [
-    "colwater:cyan_splash_0",
-    "colwater:cyan_splash_1",
-    "colwater:cyan_splash_2",
-    "colwater:cyan_splash_3"
+    "colwater:splash_0",
+    "colwater:splash_1",
+    "colwater:splash_2",
+    "colwater:splash_3"
   ]
 }
