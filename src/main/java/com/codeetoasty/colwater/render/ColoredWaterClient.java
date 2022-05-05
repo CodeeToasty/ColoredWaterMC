@@ -1,37 +1,30 @@
 package com.codeetoasty.colwater.render;
 
-import com.codeetoasty.colwater.ColoredWater;
+import static com.codeetoasty.colwater.registry.ModParticles.*;
+
+import com.codeetoasty.colwater.particle.ColBubble;
+import com.codeetoasty.colwater.particle.ColSplash;
+import com.codeetoasty.colwater.particle.ColSusp;
 import com.codeetoasty.colwater.registry.ModFluids;
-import com.codeetoasty.colwater.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
-import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.particle.SuspendParticle;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.texture.Sprite;
-import net.minecraft.client.texture.SpriteAtlasTexture;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.resource.ResourceManager;
-import net.minecraft.resource.ResourceType;
-import net.minecraft.screen.PlayerScreenHandler;
+import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.BlockRenderView;
 
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 
 public class ColoredWaterClient implements ClientModInitializer {
+
+    public static Map<String, List<Float>> colors = createMap();
 
     @Override
     public void onInitializeClient() {
@@ -238,5 +231,50 @@ public class ColoredWaterClient implements ClientModInitializer {
                 0xfed83d
         ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.GLOW_STILL_YELLOW, ModFluids.GLOW_FLOWING_YELLOW);
+    }
+
+
+
+    public static void registerBubbleParticles(DefaultParticleType particle, List<Float> colors){
+        ParticleFactoryRegistry.getInstance().register(particle,
+                fabricSpriteProvider -> new ColBubble.Factory(fabricSpriteProvider,
+                        colors.get(0),
+                        colors.get(1),
+                        colors.get(2)
+                ));
+    }
+
+    public static void registerSuspendedParticles(DefaultParticleType particle, List<Float> colors){
+        ParticleFactoryRegistry.getInstance().register(particle,
+                fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,
+                        colors.get(0),
+                        colors.get(1),
+                        colors.get(2)
+                ));
+    }
+
+    public static void registerSplashParticles(DefaultParticleType particle, List<Float> colors){
+        ParticleFactoryRegistry.getInstance().register(particle,
+                fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,
+                        colors.get(0),
+                        colors.get(1),
+                        colors.get(2)
+                ));
+    }
+    private static Map<String, List<Float>> createMap(){
+        Map<String,List<Float>> tempMap = new HashMap<>();
+        tempMap.put("black",List.of(0.113f, 0.113f, 0.129f));
+        tempMap.put("brown",List.of(0.513f, 0.329f, 0.196f));
+        tempMap.put("cyan",List.of(0.086f, 0.611f, 0.611f));
+        tempMap.put("gray",List.of(0.278f, 0.309f, 0.321f));
+        tempMap.put("green",List.of(0.368f, 0.486f, 0.086f));
+        tempMap.put("light_blue",List.of(0.227f, 0.701f, 0.854f));
+        tempMap.put("lime",List.of(0.501f, 0.780f, 0.121f));
+        tempMap.put("orange",List.of(0.780f, 0.305f, 0.741f));
+        tempMap.put("pink",List.of(0.976f, 0.501f, 0.113f));
+        tempMap.put("purple",List.of(0.952f, 0.545f, 0.666f));
+        tempMap.put("white",List.of(0.537f, 0.196f, 0.721f));
+        tempMap.put("yellow",List.of(0.976f, 1f, 0.996f));
+        return tempMap;
     }
 }

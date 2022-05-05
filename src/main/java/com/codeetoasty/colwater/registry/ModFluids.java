@@ -74,6 +74,10 @@ public class ModFluids {
     public static FlowableFluid GLOW_STILL_LIME = register("glow_lime",new GlowLimeWater.Still());
     public static FlowableFluid GLOW_FLOWING_LIME = register("glow_flowing_lime",new GlowLimeWater.Flowing());
 
+    public static void registerFluids(){
+
+    }
+
     public static FlowableFluid register(String name,FlowableFluid flowableFluid){
         return Registry.register(Registry.FLUID,new Identifier(ColoredWater.MOD_ID,name),flowableFluid);
     }

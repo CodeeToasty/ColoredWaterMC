@@ -40,6 +40,10 @@ public class ModBlocks {
     public static Block GLOW_LIGHT_BLUE = registerGlow("glow_light_blue",ModFluids.GLOW_FLOWING_LIGHT_BLUE);
     public static Block GLOW_LIME = registerGlow("glow_lime",ModFluids.GLOW_STILL_LIME);
 
+    public static void registerBlocks(){
+
+    }
+
     public static Block register(String name, FlowableFluid flowableFluid){
         return Registry.register(Registry.BLOCK, new Identifier(ColoredWater.MOD_ID, name),
                 new FluidBlock(flowableFluid, FabricBlockSettings.copy(Blocks.WATER)){});

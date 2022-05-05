@@ -9,6 +9,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.launch.common.FabricLauncherBase;
+import org.spongepowered.asm.mixin.injection.Inject;
 
 public class ColoredWater implements ModInitializer {
     public static final String MOD_ID = "colwater";
@@ -17,15 +18,15 @@ public class ColoredWater implements ModInitializer {
     @Override
     public void onInitialize() {
         if(envType.equals(EnvType.CLIENT)) {
-            ModFluids.registerFluids();
-            ModItems.registerItems();
+            new ModFluids();
+            new ModItems();
+            new ModBlocks();
             ModParticles.registerParticles();
-            ModBlocks.registerBlocks();
         }
         else{
-            ModFluids.registerFluids();
-            ModBlocks.registerBlocks();
-            ModItems.registerItems();
+            new ModFluids();
+            new ModItems();
+            new ModBlocks();
         }
     }
 

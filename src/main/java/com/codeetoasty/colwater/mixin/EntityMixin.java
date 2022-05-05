@@ -16,7 +16,7 @@ public class EntityMixin {
             method = "onSwimmingStart")
     protected ParticleEffect changeSplashColour(ParticleEffect particle) {
         Entity thiz = (Entity) (Object) this;
-        
+
         BlockState state = getRightState(thiz, thiz.getBlockStateAtPos());
 
         System.out.println(state.getFluidState().getParticle());

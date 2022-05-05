@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 
 @Environment(EnvType.CLIENT)
 public class ColBubble extends SpriteBillboardParticle {
+
     private ColBubble(ClientWorld world, double x, double y, double z, double d, double e, double f, float red, float green, float blue) {
         super(world, x, y, z);
         super.red = red;
