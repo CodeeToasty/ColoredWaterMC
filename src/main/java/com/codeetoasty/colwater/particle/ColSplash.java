@@ -3,10 +3,7 @@ package com.codeetoasty.colwater.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleFactory;
-import net.minecraft.client.particle.RainSplashParticle;
-import net.minecraft.client.particle.SpriteProvider;
+import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
 
@@ -15,19 +12,14 @@ public class ColSplash extends RainSplashParticle {
     protected ColSplash(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ,float red, float green, float blue) {
         super(world, x, y, z);
         this.gravityStrength = 0.04F;
-        super.red = red;
-        super.green = green;
-        super.blue = blue;
+        super.red = 1;
+        super.green = 1;
+        super.blue = 1;
         if (velocityY == 0.0D && (velocityX != 0.0D || velocityZ != 0.0D)) {
             this.velocityX = velocityX;
             this.velocityY = 0.1D;
             this.velocityZ = velocityZ;
         }
-    }
-
-    //
-    public void tick() {
-
     }
 
     @Environment(EnvType.CLIENT)

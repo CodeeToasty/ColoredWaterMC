@@ -48,7 +48,6 @@ public class ModItems {
 
     public static void registerItems() {
         DYABLE_WATER_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "dyable_water_bucket"), DYABLE_WATER_BUCKET);
-
         GREEN_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "green_bucket"), GREEN_BUCKET);
         PINK_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "pink_bucket"), PINK_BUCKET );
         YELLOW_BUCKET = Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, "yellow_bucket"), YELLOW_BUCKET );

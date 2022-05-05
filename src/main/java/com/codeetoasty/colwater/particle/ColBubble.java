@@ -20,7 +20,7 @@ public class ColBubble extends SpriteBillboardParticle {
         this.velocityX = d * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D;
         this.velocityY = e * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D;
         this.velocityZ = f * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D;
-        this.maxAge = (int)(8.0D / (Math.random() * 0.8D + 0.2D));
+        this.maxAge = (int)(2000.0 / (Math.random() * 0.8D + 0.2D));
     }
 
     @Override
@@ -39,7 +39,6 @@ public class ColBubble extends SpriteBillboardParticle {
             if (!this.world.getFluidState(new BlockPos(this.x, this.y, this.z)).isIn(FluidTags.WATER)) {
                 this.markDead();
             }
-
         }
     }
 

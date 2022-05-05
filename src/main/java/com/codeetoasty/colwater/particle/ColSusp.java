@@ -37,21 +37,13 @@ public class ColSusp extends SpriteBillboardParticle {
     }
 
     @Override
-    public void move(double dx, double dy, double dz) {
-        this.setBoundingBox(this.getBoundingBox().offset(dx, dy, dz));
-        this.repositionFromBoundingBox();
-    }
-
-    @Override
     public void tick() {
-        if (this.age++ >= this.maxAge || this.alpha == 0f) {
+        if (this.age++ >= this.maxAge || (world.getTimeOfDay() > 1000 && world.getTimeOfDay()<13000)) {
             this.markDead();
         }else {
             this.prevPosX = this.x;
             this.prevPosY = this.y;
             this.prevPosZ = this.z;
-
-            this.alpha -= Math.random() * (0.0015f - 0.1f);
 
             this.move(this.velocityX, this.velocityY, this.velocityZ);
             this.velocityX *= 0.99D;
