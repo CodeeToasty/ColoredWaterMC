@@ -48,11 +48,11 @@ public class ModFluids {
     public static FlowableFluid GLOW_STILL_GREEN = register("glow_green", new GlowGreenWater.Still());
     public static FlowableFluid GLOW_FLOWING_GREEN = register("glow_flowing_green",new GlowGreenWater.Flowing());
     public static FlowableFluid GLOW_STILL_PINK = register("glow_pink",new GlowPinkWater.Still());
-    public static FlowableFluid GLOW_FLOWING_PINK = register("glow_flowing_pink",new GlowGreenWater.Flowing());
+    public static FlowableFluid GLOW_FLOWING_PINK = register("glow_flowing_pink",new GlowPinkWater.Flowing());
     public static FlowableFluid GLOW_STILL_YELLOW = register("glow_yellow", new GlowYellowWater.Still());
     public static FlowableFluid GLOW_FLOWING_YELLOW = register("glow_flowing_yellow",new GlowYellowWater.Flowing());
     public static FlowableFluid GLOW_STILL_PURPLE = register("glow_purple",new GlowPurpleWater.Still());
-    public static FlowableFluid GLOW_FLOWING_PURPLE = register("glow_flowing_purple", new DyableWater.Flowing());
+    public static FlowableFluid GLOW_FLOWING_PURPLE = register("glow_flowing_purple", new GlowPurpleWater.Flowing());
     public static FlowableFluid GLOW_STILL_RED = register("glow_red",new GlowRedWater.Still());
     public static FlowableFluid GLOW_FLOWING_RED = register("glow_flowing_red",new GlowRedWater.Flowing());
     public static FlowableFluid GLOW_STILL_ORANGE = register("glow_orange",new GlowOrangeWater.Still());

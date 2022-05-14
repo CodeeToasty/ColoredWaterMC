@@ -13,21 +13,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 
 public class ColoredWater implements ModInitializer {
     public static final String MOD_ID = "colwater";
-    EnvType envType = FabricLoader.getInstance().getEnvironmentType();
 
     @Override
     public void onInitialize() {
-        if(envType.equals(EnvType.CLIENT)) {
             new ModFluids();
             new ModItems();
             new ModBlocks();
-            ModParticles.registerParticles();
-        }
-        else{
-            new ModFluids();
-            new ModItems();
-            new ModBlocks();
-        }
     }
 
 }

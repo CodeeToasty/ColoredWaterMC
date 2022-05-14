@@ -41,7 +41,6 @@ public class ModBlocks {
     public static Block GLOW_LIME = registerGlow("glow_lime",ModFluids.GLOW_STILL_LIME);
 
     public static void registerBlocks(){
-
     }
 
     public static Block register(String name, FlowableFluid flowableFluid){

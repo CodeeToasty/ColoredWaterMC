@@ -35,7 +35,7 @@ public class ColoredWaterClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         createWaterColorMap(waterColors);
-
+        registerParticles();
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_DYABLE_WATER, ModFluids.FLOWING_DYABLE_WATER, new SimpleFluidRenderHandler(
                 new Identifier("minecraft:block/water_still"),
                 new Identifier("minecraft:block/water_flow"),

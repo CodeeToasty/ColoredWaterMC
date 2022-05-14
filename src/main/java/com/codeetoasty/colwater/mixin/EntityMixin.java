@@ -19,8 +19,6 @@ public class EntityMixin {
 
         BlockState state = getRightState(thiz, thiz.getBlockStateAtPos());
 
-        System.out.println(state.getFluidState().getParticle());
-
         if (particle.equals(ParticleTypes.SPLASH)) {
             return switch (state.getBlock().toString()) {
                 case "Block{colwater:black}", "Block{colwater:glow_black}" -> ModParticles.BLACK_SPLASH;
