@@ -13,7 +13,14 @@ import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ModParticles {
+
+    public static Map<String, List<Float>> colors = new HashMap<>();
+
     public static DefaultParticleType BLACK_SPLASH=FabricParticleTypes.simple();
     public static DefaultParticleType BROWN_SPLASH=FabricParticleTypes.simple();
     public static DefaultParticleType CYAN_SPLASH=FabricParticleTypes.simple();
@@ -60,6 +67,9 @@ public class ModParticles {
     public static DefaultParticleType YELLOW_SUS=FabricParticleTypes.simple();
 
     public static void registerParticles() {
+
+        createMap(colors);
+
         BLACK_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "black_splash"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(BLACK_SPLASH, fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,0.113f, 0.113f, 0.129f));
         BROWN_SPLASH = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, "brown_splash"), FabricParticleTypes.simple(true));
@@ -144,5 +154,48 @@ public class ModParticles {
         ParticleFactoryRegistry.getInstance().register(WHITE_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.976f, 1f, 0.996f));
         YELLOW_SUS = Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID,"yellow_suspart"), FabricParticleTypes.simple(true));
         ParticleFactoryRegistry.getInstance().register(YELLOW_SUS, fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,0.996f, 0.847f, 0.239f));
+    }
+
+
+    public void registerParticle(String particleType,DefaultParticleType particle,String tint){
+        List<Float> colorList = colors.get(tint);
+        switch (particleType){
+            case "bubble": ParticleFactoryRegistry.getInstance().register(particle,
+                            fabricSpriteProvider -> new ColBubble.Factory(fabricSpriteProvider,
+                                    colorList.get(0),
+                                    colorList.get(1),
+                                    colorList.get(2)
+                            ));
+            case "splash": ParticleFactoryRegistry.getInstance().register(particle,
+                            fabricSpriteProvider -> new ColSplash.SplashFactory(fabricSpriteProvider,
+                                    colorList.get(0),
+                                    colorList.get(1),
+                                    colorList.get(2)
+                            ));
+            case "susp": ParticleFactoryRegistry.getInstance().register(particle,
+                            fabricSpriteProvider -> new ColSusp.Factory(fabricSpriteProvider,
+                                    colorList.get(0),
+                                    colorList.get(1),
+                                    colorList.get(2)
+                            ));
+        }
+    }
+
+
+    private static void createMap(Map<String, List<Float>> tempMap){
+        tempMap.put("black",List.of(0.113f, 0.113f, 0.129f));
+        tempMap.put("brown",List.of(0.513f, 0.329f, 0.196f));
+        tempMap.put("cyan",List.of(0.086f, 0.611f, 0.611f));
+        tempMap.put("gray",List.of(0.278f, 0.309f, 0.321f));
+        tempMap.put("green",List.of(0.368f, 0.486f, 0.086f));
+        tempMap.put("light_blue",List.of(0.227f, 0.701f, 0.854f));
+        tempMap.put("magenta",List.of(0.780f, 0.305f, 0.741f));
+        tempMap.put("lime",List.of(0.501f, 0.780f, 0.121f));
+        tempMap.put("orange",List.of(0.780f, 0.305f, 0.741f));
+        tempMap.put("pink",List.of(0.976f, 0.501f, 0.113f));
+        tempMap.put("purple",List.of(0.952f, 0.545f, 0.666f));
+        tempMap.put("red",List.of(0.690f, 0.180f, 0.149f));
+        tempMap.put("white",List.of(0.537f, 0.196f, 0.721f));
+        tempMap.put("yellow",List.of(0.976f, 1f, 0.996f));
     }
 }
