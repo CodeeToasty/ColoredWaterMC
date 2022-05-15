@@ -147,6 +147,7 @@ public class ModParticles {
         }
     }
 
+    //to fix -> yellow sus particle
 
     private static void createMap(Map<String, List<Float>> tempMap){
         tempMap.put("black",List.of(0.113f, 0.113f, 0.129f));
@@ -161,7 +162,7 @@ public class ModParticles {
         tempMap.put("pink",List.of(0.952f, 0.545f, 0.666f));
         tempMap.put("purple",List.of(0.780f, 0.305f, 0.741f));
         tempMap.put("red",List.of(0.690f, 0.180f, 0.149f));
-        tempMap.put("white",List.of(0.537f, 0.196f, 0.721f));
-        tempMap.put("yellow",List.of(0.976f, 1f, 0.996f));
+        tempMap.put("white",List.of(0.976f, 1f, 0.996f));
+        tempMap.put("yellow",List.of(0.976f, 0.976f, 0.086f));
     }
 }

@@ -30,14 +30,14 @@ public class ModFluids {
     public static FlowableFluid FLOWING_BLACK = register("flowing_black", new BlackWater.Flowing());
     public static FlowableFluid STILL_WHITE = register("white",new WhiteWater.Still());
     public static FlowableFluid FLOWING_WHITE = register("flowing_white",new WhiteWater.Flowing());
-    public static FlowableFluid STILL_BROWN = register("brown", new BrownWater.Flowing());
+    public static FlowableFluid STILL_BROWN = register("brown", new BrownWater.Still());
     public static FlowableFluid FLOWING_BROWN = register("flowing_brown",new BrownWater.Flowing());
     public static FlowableFluid STILL_MAGENTA = register("magenta",new MagentaWater.Still());
     public static FlowableFluid FLOWING_MAGENTA = register("flowing_magenta", new MagentaWater.Flowing());
     public static FlowableFluid STILL_CYAN = register("cyan",new CyanWater.Still());
     public static FlowableFluid FLOWING_CYAN = register("flowing_cyan",new CyanWater.Flowing());
     public static FlowableFluid STILL_GRAY = register("gray",new GrayWater.Still());
-    public static FlowableFluid FLOWING_GRAY = register("flowing_gray",new GreenWater.Flowing());
+    public static FlowableFluid FLOWING_GRAY = register("flowing_gray",new GrayWater.Flowing());
     public static FlowableFluid STILL_LIGHT_BLUE = register("light_blue",new LightBlueWater.Still());
     public static FlowableFluid FLOWING_LIGHT_BLUE = register("flowing_light_blue",new LightBlueWater.Flowing());
     public static FlowableFluid STILL_LIME = register("lime",new LimeWater.Still());
@@ -62,7 +62,7 @@ public class ModFluids {
     public static FlowableFluid GLOW_STILL_WHITE = register("glow_white", new GlowWhiteWater.Still());
     public static FlowableFluid GLOW_FLOWING_WHITE = register("glow_flowing_white", new GlowWhiteWater.Flowing());
     public static FlowableFluid GLOW_STILL_BROWN = register("glow_brown", new GlowBrownWater.Still());
-    public static FlowableFluid GLOW_FLOWING_BROWN = register("glow_flowing_brown",new GlowWhiteWater.Flowing());
+    public static FlowableFluid GLOW_FLOWING_BROWN = register("glow_flowing_brown",new GlowBrownWater.Flowing());
     public static FlowableFluid GLOW_STILL_MAGENTA = register("glow_magenta",new GlowMagentaWater.Still());
     public static FlowableFluid GLOW_FLOWING_MAGENTA = register("glow_flowing_magenta",new GlowMagentaWater.Flowing());
     public static FlowableFluid GLOW_STILL_CYAN = register("glow_cyan",new GlowCyanWater.Still());

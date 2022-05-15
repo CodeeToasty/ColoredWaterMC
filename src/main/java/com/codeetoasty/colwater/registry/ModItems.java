@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
-    public static Item DYABLE_WATER_BUCKET = register("dyable_water_bucker",STILL_DYABLE_WATER);
+    public static Item DYABLE_WATER_BUCKET = register("dyable_water_bucket",STILL_DYABLE_WATER);
     public static Item PINK_BUCKET = register("pink_bucket",STILL_PINK);
     public static Item GREEN_BUCKET = register("green_bucket",STILL_GREEN);
     public static Item YELLOW_BUCKET = register("yellow_bucket",STILL_YELLOW);
@@ -40,7 +40,7 @@ public class ModItems {
     public static Item GLOW_BROWN_BUCKET = register("glow_brown_bucket",GLOW_STILL_BROWN);
     public static Item GLOW_MAGENTA_BUCKET = register("glow_magenta_bucket",GLOW_STILL_MAGENTA);
     public static Item GLOW_CYAN_BUCKET = register("glow_cyan_bucket",GLOW_STILL_CYAN);
-    public static Item GLOW_GRAY_BUCKET = register("glow_light_bucket",GLOW_STILL_GRAY);
+    public static Item GLOW_GRAY_BUCKET = register("glow_gray_bucket",GLOW_STILL_GRAY);
     public static Item GLOW_LIGHT_BLUE_BUCKET = register("glow_light_blue_bucket",GLOW_STILL_LIGHT_BLUE);
     public static Item GLOW_LIME_BUCKET = register("glow_lime_bucket",GLOW_STILL_LIME);
 
