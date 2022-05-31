@@ -3,17 +3,17 @@
   "id": "colwater",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "ColWater",
+  "description": "Adds colored water and glowing colored water :D",
   "authors": [
-    "Me!"
+    "CodeeToasty"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/colwater",
+    "sources": "https://github.com/CodeeToasty/ColoredWaterMC"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/colwater/icon.png",
 
   "environment": "*",
@@ -33,7 +33,9 @@
     "fabricloader": ">=0.13.3",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "java": ">=17"
+    "java": ">=17",
+    "fluidlogged": ">=1.0.1",
+    "midnightlib": ">=0.4.0"
   },
   "suggests": {
     "another-mod": "*"
