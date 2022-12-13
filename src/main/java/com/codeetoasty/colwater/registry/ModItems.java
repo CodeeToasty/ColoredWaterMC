@@ -2,13 +2,14 @@ package com.codeetoasty.colwater.registry;
 
 import com.codeetoasty.colwater.ColoredWater;
 import static com.codeetoasty.colwater.registry.ModFluids.*;
+
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
@@ -49,9 +50,13 @@ public class ModItems {
 
     }
 
+
+
+
     public static Item register(String name, FlowableFluid fluid){
-        return Registry.register(Registry.ITEM, new Identifier(ColoredWater.MOD_ID, name),
-                new BucketItem(fluid, new Item.Settings().group(ItemGroup.DECORATIONS)
-                        .recipeRemainder(Items.BUCKET).maxCount(1)));
+        BucketItem bucket = new BucketItem(fluid, new Item.Settings()
+                .recipeRemainder(Items.BUCKET).maxCount(1));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INVENTORY).register(entries -> entries.add(bucket));
+        return Registry.register(Registries.ITEM, new Identifier(ColoredWater.MOD_ID, name),bucket);
     }
 }

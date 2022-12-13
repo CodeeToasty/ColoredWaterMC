@@ -4,14 +4,12 @@ import com.codeetoasty.colwater.ColoredWater;
 import com.codeetoasty.colwater.particle.ColBubble;
 import com.codeetoasty.colwater.particle.ColSplash;
 import com.codeetoasty.colwater.particle.ColSusp;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -119,7 +117,7 @@ public class ModParticles {
 
 
     public static DefaultParticleType createParticle(String name, String type){
-        return Registry.register(Registry.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, name+"_"+type),
+        return Registry.register(Registries.PARTICLE_TYPE, new Identifier(ColoredWater.MOD_ID, name+"_"+type),
                 FabricParticleTypes.simple(true));
     }
 

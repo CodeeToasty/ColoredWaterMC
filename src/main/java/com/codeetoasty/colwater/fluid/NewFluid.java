@@ -23,15 +23,15 @@ public abstract class NewFluid extends FlowableFluid {
     }
 
     /**
-     * @return whether the fluid infinite like water
+     * @return whether the fluid is infinite like water
      */
-    @Override
+
     protected boolean isInfinite() {
         return false;
     }
 
     /**
-     * Perform actions when fluid flows into a replaceable block. Water drops
+     * Perform actions when the fluid flows into a replaceable block. Water drops
      * the block's loot table. Lava plays the "block.lava.extinguish" sound.
      */
     @Override
@@ -41,7 +41,7 @@ public abstract class NewFluid extends FlowableFluid {
     }
 
     /**
-     * Lava returns true if its FluidState is above a certain height and the
+     * Lava returns true if it's FluidState is above a certain height and the
      * Fluid is Water.
      *
      * @return whether the given Fluid can flow into this FluidState

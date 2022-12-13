@@ -5,8 +5,9 @@ import com.codeetoasty.colwater.fluid.*;
 import com.codeetoasty.colwater.fluid.coloredfluid.*;
 import com.codeetoasty.colwater.fluid.glowingfluid.*;
 import net.minecraft.fluid.FlowableFluid;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import com.codeetoasty.colwater.ColoredWater;
 
 public class ModFluids {
@@ -79,6 +80,6 @@ public class ModFluids {
     }
 
     public static FlowableFluid register(String name,FlowableFluid flowableFluid){
-        return Registry.register(Registry.FLUID,new Identifier(ColoredWater.MOD_ID,name),flowableFluid);
+        return Registry.register(Registries.FLUID,new Identifier(ColoredWater.MOD_ID,name),flowableFluid);
     }
 }

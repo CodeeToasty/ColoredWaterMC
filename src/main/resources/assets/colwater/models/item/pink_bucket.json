@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "colwater:items/pink_bucket"
+    "layer0": "colwater:item/pink_bucket"
   }
 }

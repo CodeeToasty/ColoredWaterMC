@@ -10,6 +10,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.world.World;
 
 public abstract class CyanWater extends DyableWater {
     @Override
@@ -41,6 +42,11 @@ public abstract class CyanWater extends DyableWater {
         }
 
         @Override
+        protected boolean isInfinite(World world) {
+            return false;
+        }
+
+        @Override
         public int getLevel(FluidState fluidState) {
             return fluidState.get(LEVEL);
         }
@@ -49,9 +55,18 @@ public abstract class CyanWater extends DyableWater {
         public boolean isStill(FluidState fluidState) {
             return false;
         }
+        @Override
+        protected boolean isInfinite() {
+            return false;
+        }
     }
 
     public static class Still extends CyanWater {
+        @Override
+        protected boolean isInfinite(World world) {
+            return false;
+        }
+
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

@@ -47,6 +47,11 @@ public abstract class GlowCyanWater extends DyableWater {
             builder.add(LEVEL);
         }
 
+        @Override
+        protected boolean isInfinite(World world) {
+            return false;
+        }
+
         @Environment(EnvType.CLIENT)
         public void randomDisplayTick(World world, BlockPos pos, FluidState state, Random random) {
             BlockPos blockPos = pos.up();
@@ -74,6 +79,11 @@ public abstract class GlowCyanWater extends DyableWater {
     }
 
     public static class Still extends GlowCyanWater {
+        @Override
+        protected boolean isInfinite(World world) {
+            return false;
+        }
+
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

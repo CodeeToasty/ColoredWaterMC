@@ -65,6 +65,11 @@ public abstract class GlowBlackWater extends DyableWater {
         }
 
         @Override
+        protected boolean isInfinite(World world) {
+            return false;
+        }
+
+        @Override
         public int getLevel(FluidState fluidState) {
             return fluidState.get(LEVEL);
         }
@@ -84,6 +89,11 @@ public abstract class GlowBlackWater extends DyableWater {
         @Override
         public boolean isStill(FluidState fluidState) {
             return true;
+        }
+
+        @Override
+        protected boolean isInfinite(World world) {
+            return false;
         }
     }
 }

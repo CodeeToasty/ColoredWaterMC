@@ -1,30 +1,19 @@
 package com.codeetoasty.colwater.render;
 
-import static com.codeetoasty.colwater.registry.ModParticles.*;
-import static com.codeetoasty.colwater.registry.ModFluids.*;
-
-import com.codeetoasty.colwater.ColoredWater;
-import com.codeetoasty.colwater.particle.ColBubble;
-import com.codeetoasty.colwater.particle.ColSplash;
-import com.codeetoasty.colwater.particle.ColSusp;
 import com.codeetoasty.colwater.registry.ModFluids;
-import com.codeetoasty.colwater.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
-import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.particle.DefaultParticleType;
-import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.util.Identifier;
 
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static com.codeetoasty.colwater.registry.ModFluids.*;
+import static com.codeetoasty.colwater.registry.ModParticles.registerParticles;
 
 
 public class ColoredWaterClient implements ClientModInitializer {
