@@ -30,12 +30,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.18.x",
-    "java": ">=17",
-    "fluidlogged": ">=1.0.1",
-    "midnightlib": ">=0.4.0"
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"
